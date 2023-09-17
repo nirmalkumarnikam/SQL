@@ -6,20 +6,20 @@ SELECT first_name AS WORKER_NAME FROM worker;
  SELECT UPPER(first_name) from worker;
  
 -- 3)Write SQL query to fetch unique values of DEPARTMENT from worker Table.
- SELECT distinct DEPARTMENT FROM worker;
- SELECT DEPARTMENT FROM worker group by DEPARTMENT;
+ SELECT DISTINCT DEPARTMENT FROM worker;
+ SELECT DEPARTMENT FROM worker GROUP BY DEPARTMENT;
  
--- 4)Write SQL query to print first 3 character from FIRST_NAME from worker.
- SELECT substring(first_name, 1,3) from worker;
+-- 4)Write SQL query to print first 3 characters from FIRST_NAME from worker.
+ SELECT substring(first_name, 1,3) FROM worker;
  
 -- 5)Write an sql query to find position of alphabet (b) in the first name column 'Amitabh' from worker table;
- SELECT instr(first_name, 'b') from worker where first_name ='Amitabh'; -- case insensitive search karta hai.
+ SELECT instr(first_name, 'b') FROM worker WHERE first_name ='Amitabh'; -- case insensitive search karta hai.
  
 -- 6)Write an sql query to print first_name from worker table after removing white spaces from right side.
- SELECT RTRIM(first_name) from worker;
+ SELECT RTRIM(first_name) FROM worker;
  
 -- 7)Write an sql query to print first_name from worker table after removing white spaces from left side.
- SELECT LTRIM(first_name) from worker;
+ SELECT LTRIM(first_name) FROM worker;
  
 -- 8)Write an sql query that fetches unique values of DEPARTMENT from worker table and prints its length.
  SELECT DISTINCT DEPARTMENT, LENGTH(DEPARTMENT) FROM worker;
