@@ -6,20 +6,20 @@ SELECT first_name AS WORKER_NAME FROM worker;
  SELECT UPPER(first_name) from worker;
  
 -- 3)Write SQL query to fetch unique values of DEPARTMENT from worker Table.
- SELECT DISTINCT DEPARTMENT FROM worker;
- SELECT DEPARTMENT FROM worker GROUP BY DEPARTMENT;
+ SELECT distinct DEPARTMENT FROM worker;
+ SELECT DEPARTMENT FROM worker group by DEPARTMENT;
  
--- 4)Write SQL query to print first 3 characters from FIRST_NAME from worker.
- SELECT substring(first_name, 1,3) FROM worker;
+-- 4)Write SQL query to print first 3 character from FIRST_NAME from worker.
+ SELECT substring(first_name, 1,3) from worker;
  
 -- 5)Write an sql query to find position of alphabet (b) in the first name column 'Amitabh' from worker table;
- SELECT instr(first_name, 'b') FROM worker WHERE first_name ='Amitabh'; -- case insensitive search karta hai.
+ SELECT instr(first_name, 'b') from worker where first_name ='Amitabh'; -- case insensitive search karta hai.
  
 -- 6)Write an sql query to print first_name from worker table after removing white spaces from right side.
- SELECT RTRIM(first_name) FROM worker;
+ SELECT RTRIM(first_name) from worker;
  
 -- 7)Write an sql query to print first_name from worker table after removing white spaces from left side.
- SELECT LTRIM(first_name) FROM worker;
+ SELECT LTRIM(first_name) from worker;
  
 -- 8)Write an sql query that fetches unique values of DEPARTMENT from worker table and prints its length.
  SELECT DISTINCT DEPARTMENT, LENGTH(DEPARTMENT) FROM worker;
@@ -165,8 +165,21 @@ SELECT *FROM worker WHERE worker_id = (SELECT min(worker_id) FROM worker);
  SELECT max(salary) AS MaxSalary , department FROM worker GROUP BY department; 
  
 
- 
- 
+-- playground
+SELECT worker.FIRST_NAME, Bonus.BONUS_AMOUNT
+	FROM worker
+    INNER JOIN Bonus
+    ON worker.Worker_ID = Bonus.Worker_Ref_ID
+    ORDER BY worker.Worker_ID;
+    
+    
+    SELECT *FROM Worker;
+    
+    CREATE VIEW salary AS SELECT FIRST_NAME AS Name, SALARY FROM Worker where SALARY>=200000;
+    
+	select *from salary;
+    
+    DROP view if exists money;
  
  
  
