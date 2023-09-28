@@ -23,6 +23,8 @@ INSERT INTO Worker (Worker_ID, FIRST_NAME, LAST_NAME, SALARY, JOINING_DATE, DEPA
             ( 007, 'Satish', 'Kumar', 75000, '14-01-20 09.00.00', 'Account' ),
             ( 008, 'Geetika', 'Chauhan', 90000, '14-04-11 09.00.00', 'Admin' );
 
+INSERT INTO Worker(Worker_ID, FIRST_NAME, LAST_NAME, SALARY, JOINING_DATE, DEPARTMENT)
+values(009, 'esha', 'Chauhan', 90000, '14-04-11 09.00.00', 'Admin');
 
 CREATE TABLE Bonus(
 	WORKER_REF_ID INT,

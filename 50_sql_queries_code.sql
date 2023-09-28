@@ -164,6 +164,25 @@ SELECT *FROM worker WHERE worker_id = (SELECT min(worker_id) FROM worker);
  -- 45) write name of employee having highest salary in each department
  SELECT max(salary) AS MaxSalary , department FROM worker GROUP BY department; 
  
+-- new queries: 
+-- 1)Query the two FIRST_NAME in worker with the shortest and longest FIRST_NAME names, 
+-- 	as well as their respective lengths (i.e.: number of characters in the name).
+--  If there is more than one smallest or largest FIRST_NAME, choose the one that comes first when ordered alphabetically.
+
+select FIRST_NAME, length(FIRST_NAME) from worker  order by length(FIRST_NAME),FIRST_NAME limit 1;
+select FIRST_NAME, length(FIRST_NAME) from worker  order by length(FIRST_NAME) desc,FIRST_NAME limit 1;
+
+-- 2)Query the list of FIRST_NAME names starting with vowels (i.e., a, e, i, o, or u) from worker. Your result cannot contain duplicates.
+-- select distinct FIRST_NAME from worker where substr(FIRST_NAME,1,1) in ('a','e','i','o','u') ;
+select distinct FIRST_NAME from worker where left(FIRST_NAME,1) in ('a','e','i','o','u') ;
+
+-- 3)Query the Name of any student in STUDENTS who scored higher than  Marks. 
+-- Order your output by the last three characters of each name. 
+-- If two or more students both have names ending in the same last three characters 
+-- (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID 
+select name from students where marks>75 order by right(name, 3), id ;
+
+
 
 -- playground
 SELECT worker.FIRST_NAME, Bonus.BONUS_AMOUNT
