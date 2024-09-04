@@ -85,6 +85,7 @@ ORDER BY COUNT(worker_id) DESC;
 -- 24)write a qeury to display details of workers who are also manager.
 SELECT W.*FROM worker AS W INNER JOIN title as t on W.worker_id= t.worker_ref_id WHERE t.WORKER_TITLE = 'Manager'; -- will show info of worker table... look at W.*FROM 
 SELECT t.*FROM worker AS W INNER JOIN title as t on W.worker_id= t.worker_ref_id WHERE t.WORKER_TITLE = 'Manager'; -- will show info of title table... look at t.*FROM
+select * from worker where Worker_ID in (select WORKER_REF_ID from Title where WORKER_TITLE = 'manager');
 
 -- 25)fetch number(more than 1) of same titles in ORG of different types.
 SELECT WORKER_TITLE, COUNT(*) AS COUNT FROM title GROUP BY WORKER_TITLE HAVING COUNT(*)>1
