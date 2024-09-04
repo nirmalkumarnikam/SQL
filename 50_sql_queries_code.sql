@@ -59,6 +59,7 @@ SELECT * FROM WORKER WHERE first_name LIKE '%a';
 
 -- 18)Write an sql query to print all worker details from worker table whose first name ENDS with A and has 6 alphabets.
 SELECT *FROM worker WHERE first_name LIKE '_____h';
+SELECT *FROM worker WHERE first_name LIKE '%h' AND length(first_name)=6;
  
 -- 19)workers whose salary lies between 100000 and 500000.
 SELECT *FROM worker WHERE salary BETWEEN 100000 AND 500000;
