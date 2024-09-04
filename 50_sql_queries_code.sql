@@ -44,6 +44,7 @@ SELECT CONCAT(first_name, ' ', last_name) from worker;
  
 -- 14)Write an sql query to print all worker details from worker table with first_name EXCLUDING "satish" and "vipul".
  SELECT *FROM worker WHERE first_name NOT IN('vipul', 'satish');
+ SELECT *FROM worker WHERE first_name = 'satish' OR first_name = 'vipul';
  
 -- 15)Write an sql query to print all worker details from worker table with DEPARTMENT name as "Admin"
  SELECT *FROM worker WHERE DEPARTMENT IN('Admin');
